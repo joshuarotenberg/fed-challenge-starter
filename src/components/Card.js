@@ -1,13 +1,7 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-const CardContainer = styled.div`
-    width: 288px;
-    height: 280px;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
-    border-radius:5px;
-    margin: 0 30px 30px 0;
-`
+
 
 const ImageWrapper = styled.div`
    position:relative;
@@ -114,15 +108,16 @@ const SeriesIcon = styled.img`
 `
 
 
-const Card = ({title, image, thumb, duration, distance, type, numWorkouts}) => {
+const Card = ({title, image, thumb, duration, distance, type, numWorkouts, toggleActive, id, toggleActiveStyle}) => {
     
     let series = false;
     if (type === "collection") {
         series = true;
     }
+
    
     return (
-        <CardContainer>
+        <div className={toggleActiveStyle(id)} onClick={() => toggleActive(id)} >
             {series ? <ImageWrapper>
                 <Overlay>
                     <SeriesCount>{numWorkouts}</SeriesCount>
@@ -145,7 +140,7 @@ const Card = ({title, image, thumb, duration, distance, type, numWorkouts}) => {
                 : ""
                 }
             </CopyWrapper>
-        </CardContainer>
+        </div>
     );
 }
 

@@ -10,13 +10,13 @@ const CardContainer = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-
+    align-content: flex-start;
 ` 
 
-const CardIndex = () => {
+const CardIndex = ({toggleActive, toggleActiveStyle}) => {
     return (
         <CardContainer>
-            {workoutData.map((data, key) => <Card key={key} {...data}  /> )}
+            {workoutData.map((data, key) => <Card id={key} key={key} {...data} toggleActive={toggleActive} toggleActiveStyle={toggleActiveStyle} /> )}
         </CardContainer>
       );
 }

@@ -1,6 +1,7 @@
 body {
   font-family: "Open Sans", sans-serif;
 }
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -23,4 +24,20 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+.card {
+  width: 288px;
+  height: 280px;
+  border-radius: 5px;
+  margin: 0 30px 30px 0;
+}
+
+.card.inactive {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.card.active {
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s ease-in-out;
 }
