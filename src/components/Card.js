@@ -124,9 +124,9 @@ const Card = ({title, image, thumb, duration, distance, type, numWorkouts, toggl
                     <SeriesText>WORKOUTS</SeriesText>
                     <SeriesIcon src="/images/series-icon.png" alt="series icon"></SeriesIcon>
                 </Overlay>
-                <MainImage src={thumb}></MainImage>
+                <MainImage src={thumb} alt={title}></MainImage>
             </ImageWrapper>
-            : <MainImage src={thumb}></MainImage>
+            : <MainImage src={thumb} alt={title}></MainImage>
             }
             <CopyWrapper>
                 <HeaderWrapper>
